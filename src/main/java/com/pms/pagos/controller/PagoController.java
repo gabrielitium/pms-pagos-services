@@ -1,6 +1,7 @@
 package com.pms.pagos.controller;
 
 import com.pms.pagos.dto.PagoDTO;
+import com.pms.pagos.model.Pago;
 import com.pms.pagos.service.PagoService;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,13 @@ public class PagoController {
     @PostMapping
     public PagoDTO savePago(@RequestBody PagoDTO pagoDTO) {
         return pagoService.savePago(pagoDTO);
+    }
+
+    @PutMapping("/{pagoId}")
+    public Pago updatePago(@PathVariable Integer pagoId,
+                           @RequestParam(required = false) Double total,
+                           @RequestParam(required = false) Integer estado_pago) {
+        return pagoService.updatePago(pagoId, total, estado_pago);
     }
 
     @DeleteMapping("/{id}")
