@@ -42,7 +42,7 @@ public class Pago {
     @JoinColumn(name = "estado_pago", nullable = false)
     private EstadoPago estadoPago;
 
-    @OneToMany(mappedBy = "pago", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "pago", cascade = CascadeType.ALL, fetch = FetchType.LAZY,orphanRemoval = true)
     private List<DetallePago> detalles = new ArrayList<>();
 
 }

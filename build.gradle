@@ -22,11 +22,13 @@ dependencies {
             ["mysql:mysql-connector-java:8.0.33"],
             ['org.hibernate.validator:hibernate-validator:8.0.1.Final'],
             ['org.glassfish:jakarta.el:4.0.2'],
+            ["org.springframework.kafka:spring-kafka:3.1.0"],
             ['org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2']
     )
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.kafka:spring-kafka-test")
 }
 
 test {

@@ -1,5 +1,17 @@
 
 spring:
+  kafka:
+    bootstrap-servers: host.docker.internal:9092
+    producer:
+      retries: 3
+      acks: all
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: "consumer-group-1"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
   jpa:
     properties:
       database-platform: org.hibernate.dialect.MySQL8Dialect
