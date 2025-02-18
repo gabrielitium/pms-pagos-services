@@ -1,7 +1,7 @@
 
 spring:
   kafka:
-    bootstrap-servers: host.docker.internal:9092
+    bootstrap-servers: ${KAFKA_HOST}:9093
     producer:
       retries: 3
       acks: all
